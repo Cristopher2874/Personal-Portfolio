@@ -1,6 +1,4 @@
-'use client'
-
-export default function Home() {
+export default function About() {
   return (
     <div>
         <h1>Hola mundo</h1>
