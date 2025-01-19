@@ -11,22 +11,30 @@ import {
 
 export function SliderSection() {
   return (
-    <Carousel className="w-full max-w-xs">
-      <CarouselContent>
-        {Array.from({ length: 5 }).map((_, index) => (
-          <CarouselItem key={index}>
-            <div className="p-1">
-              <Card>
-                <CardContent className="flex aspect-square items-center justify-center p-6">
-                  <span className="text-4xl font-semibold">{index + 1}</span>
-                </CardContent>
-              </Card>
-            </div>
-          </CarouselItem>
-        ))}
-      </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
-    </Carousel>
+    <div className="aspect-video w-full min-w-xs">
+      <Carousel>
+        <section className="bg-white dark:bg-black">
+          <h1>Information</h1>
+        </section>
+        <CarouselContent>
+          {Array.from({ length: 5 }).map((_, index) => (
+            <CarouselItem key={index}>
+              <div>
+                <Card className="flex flex-grow w-full h-full rounded-none border-none">
+                  <CardContent className="flex flex-grow items-center justify-center aspect-video">
+                    <span className="text-4xl font-semibold">{index + 1}</span>
+                  </CardContent>
+                </Card>
+              </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <section className="bg-white dark:bg-black">
+          <h1>Buttons</h1>
+        </section>
+        <CarouselPrevious />
+        <CarouselNext />
+      </Carousel>
+    </div>
   )
 }

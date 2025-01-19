@@ -2,6 +2,9 @@ import Image from "next/image";
 import Link from 'next/link';
 import { SliderSection } from '@/components/custom/SliderSection';
 import { AboutSection } from '@/components/custom/AboutSection';
+import { ProjectSection } from '@/components/custom/ProjectSection';
+import { SkillsSection } from '@/components/custom/SkillsSection';
+import { ContactSection } from '@/components/custom/ContactSection';
 //font-[family-name:var(--font-geist-mono)]
 /*
 UX orientado a objetos, linux
@@ -22,21 +25,12 @@ Chat de IA que consteste preguntas acerca de mi
 */
 export default function Home() {
   return (
-    <>
+    <div className="w-2/3 space-y-4">
       <SliderSection />
       <AboutSection />
-      <section>
-        <h1>Projects</h1>
-      </section>
-      <section>
-        <h1>Skills</h1>
-      </section>
-      <section>
-        <h1>Education</h1>
-      </section>
-      <section>
-        <h1>Contact</h1>
-      </section>
-    </>
+      <ProjectSection />
+      <SkillsSection />
+      <ContactSection />
+    </div>
   );
 }
