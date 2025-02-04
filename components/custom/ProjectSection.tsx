@@ -38,7 +38,7 @@ const ProjectCard: React.FC<Project> = ({ name, image, description, codeLink, de
 
 export function ProjectSection(){
     return (
-        <section className="project-section">
+        <section className="bg-black bg-opacity-30 rounded w-full p-4">
             <h2>Featured Projects</h2>
             <div className="project-cards">
                 {projects.map((project, index) => (

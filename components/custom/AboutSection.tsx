@@ -2,7 +2,7 @@ import { Avatar, AvatarImage } from "@/components/ui/avatar";
 
 export function AboutSection() {
     return (
-        <section className="flex flex-row items-center space-y-4 bg-slate-500 rounded">
+        <section className="flex flex-row items-center space-y-4 bg-black bg-opacity-30 rounded w-full p-4">
             <Avatar>
                 <AvatarImage>
                     <img src="/path/to/your/image.jpg" alt="Your Name" style={{ width: '150px', borderRadius: '50%' }} />

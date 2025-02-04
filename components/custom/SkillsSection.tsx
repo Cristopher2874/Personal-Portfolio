@@ -1,6 +1,6 @@
 export function SkillsSection() {
     return (
-        <section>
+        <section className="bg-black bg-opacity-30 rounded w-full p-4">
             <h1>Skills</h1>
             <h2>Programming Languages</h2>
             <ul>

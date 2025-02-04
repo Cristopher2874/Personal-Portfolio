@@ -25,7 +25,7 @@ Chat de IA que consteste preguntas acerca de mi
 */
 export default function Home() {
   return (
-    <div className="w-2/3 space-y-4">
+    <div className="w-2/3 space-y-4 flex flex-col flex-grow items-center justify-center">
       <SliderSection />
       <AboutSection />
       <ProjectSection />
