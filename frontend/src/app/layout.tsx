@@ -31,10 +31,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    // Inject the font variables into the HTML tag
-    <html lang="en" className={`${syne.variable} ${geistSans.variable} ${geistMono.variable}`}>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${syne.variable} ${geistSans.variable} ${geistMono.variable}`}
+    >
       {/* Apply your dark background and default text color to the body */}
-      <body className="antialiased bg-portfolio-bg text-foreground">
+      <body suppressHydrationWarning className="antialiased bg-portfolio-bg text-foreground">
         {children}
       </body>
     </html>
