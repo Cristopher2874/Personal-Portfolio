@@ -1,5 +1,21 @@
 ## Logs from 18/06/2026
 
+Fixed the error:
+```bash
+A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+```
+with adding `suppressHydrationWarning` to the HTML and body tags
+
+Aded some skeleton files for api, the components of the main page and sections
+
+Worked on a types file that is about exporting the structs used to type the arrays and data use when dedicated to the same type of data
+
+Added the main components to the page as about, nav, carousel to start with basic skeleton structure
+
+Learned the difference on Server and Client components, also to export the functions and use on page
+
+## Logs from 18/06/2026
+
 First start the frontend folder
 
 Using NextJS and use the following command to get started from the repo root:
