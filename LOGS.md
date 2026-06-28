@@ -1,3 +1,16 @@
+## Logs from 27/06/2026
+
+`fixed top-0` sticks the nav bar to the top of the screen and fixed keeps the position despite the window movement.
+Quick carousel add using `npx shadcn@latest add carousel`
+Learned the event Listener basics:
+```tsx
+    //action, function, options
+    window.addEventListener('scroll', handleScroll, {passive: true});
+```
+This helps to control the scrolling with a function, but is important to remove once the effect or event is done
+- Always use `cn()` funciton when facing conditional styling on tailwind classNames, helps to integrate without a lot of strings
+- Using tailwind variables to change the colors, currently for the `foreground` option set to black and bg to white
+
 ## Logs from 18/06/2026
 
 Fixed the error:

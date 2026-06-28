@@ -1,31 +1,41 @@
 'use client'
 import {useState} from 'react';
 import {useEffect} from 'react';
-import { Button } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
 
 export default function NavBar(){
-  const[position, setPosition] = useState(0);
+  const[scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setPosition(window.scrollY);
+      setScrolled(window.scrollY > 48);
+    }
+    //action, function, options
+    window.addEventListener('scroll', handleScroll, {passive: true});
 
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
     }
   }, []);
 
   return (
-    <nav className="flex w-full flex-row items-center justify-between fixed top-0">
-      <p className="font-syne text-xl font-bold text-portfolio-amber p-3">logo</p>
-      <div>
-        <Button>
-          <a href="#home" className="font-syne text-xl font-bold text-portfolio-amber p-3">Home</a>
-        </Button>
-        <Button>
-          <a href="#about" className="font-syne text-xl font-bold text-portfolio-amber p-3">About</a>
-        </Button>
-        <Button>
-          <a href="#contact" className="font-syne text-xl font-bold text-portfolio-amber p-3">Contact</a>
-        </Button>
+    <nav className={cn(
+      "fixed top-0 z-50 w-full flex items-center justify-between px-8 py-4 transition-all duration-300",
+      scrolled ? 'bg-bg/80 backdrop-blur-md border-b border-border' : 'bg-transparent'
+    )}>
+      <p className="font-syne text-xl font-bold text-portfolio-amber">
+        Cris.main
+      </p>
+      <div className='flex items-center gap-6'>
+        <a href="#home" className="font-mono text-sm text-muted-foreground hover:text-foreground transition-colors uppercase tracking-widest">
+          Home
+        </a>
+        <a href="#about" className="font-mono text-sm text-muted-foreground hover:text-foreground transition-colors uppercase tracking-widest">
+          About
+        </a>
+        <a href="#contact" className="font-mono text-sm text-muted-foreground hover:text-foreground transition-colors uppercase tracking-widest">
+          Contact
+        </a>
       </div>
     </nav>
   );

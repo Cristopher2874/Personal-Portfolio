@@ -11,3 +11,13 @@ export interface Project {
   githubUrl?: string
   youtubeUrl?: string
 }
+
+//Slides typing
+
+type Slide = {
+  id: string,
+  type: 'image'|'video',
+  src: string,
+  title: string,
+  subtitle: string
+}
