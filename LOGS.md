@@ -1,5 +1,13 @@
 ## Logs from 27/06/2026
 
+- Added styles for nav bar and carousel
+- Added the slides types and data fetch for dynamic load
+- added sample image to try out the styles.
+- Learned about `<video>` tag and their properties, also, about the conditional features to render
+- Fixed the `page.tsx` styles to allow navbar to collide with the carousel for better styling.
+
+## Logs from 27/06/2026
+
 `fixed top-0` sticks the nav bar to the top of the screen and fixed keeps the position despite the window movement.
 Quick carousel add using `npx shadcn@latest add carousel`
 Learned the event Listener basics:
