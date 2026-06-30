@@ -1,22 +1,17 @@
 'use client'
-import {useState} from 'react';
-import { Card, CardContent } from '@/components/ui/card'
 import { 
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious
 } from '@/components/ui/carousel';
 import AutoPlay from "embla-carousel-autoplay"
+import { slides } from '@/data/slides';
 
 export default function HeroSection(){
-  const[activeSlide, setActiveSlide] = useState(0);
-
   return (
-    <section className='min-h-1/3 w-screen top-0 max-h-1/3'>
+    <section className='w-screen top-0 h-screen'>
       <Carousel
-        className='w-full'
+        className='w-full h-full'
         opts={{
           align: "start",
           loop: true,
@@ -27,30 +22,38 @@ export default function HeroSection(){
           }),
         ]}
       >
-        <CarouselContent className='p-0'>
-          {Array.from({ length: 5 }).map((_, index) => (
-            <CarouselItem key={index} className=''>
-              <div className='p-0'>
-                <Card className='bg-black'>
-                  <CardContent className='flex aspect-square items-center justify-center p-6 flex-col'>
-                    <div className='bg-linear-to-t'>
-                      <div className='w-h'>
-                        <img 
-                          src="sample"
-                          alt="sample_image"
-                          className='absolute inset-0 object-cover'
-                        />
-                      </div>
-                      <div className='absolute z-10'>
-                          <h1 className='font-syne text-6xl font-bold text-portfolio-amber'>Text over the image {index + 1}</h1>
-                          <h3 className='font-syne text-2xl font-bold text-white'>Image subtitle</h3>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
+        <CarouselContent className='p-0 m-0 h-screen'>
+          {slides.map((slide) => (
+            <CarouselItem key={slide.id} className='bg-transparent pl-0'>
+              <div className='flex items-center justify-center p-0 h-full w-full relative border-b-4'>
+                {slide.type === "video" ? (
+                  <video
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    src={slide.src}
+                    className='absolute inset-0 object-cover w-full h-full'
+                  />
+                ):(
+                  <img 
+                    src={slide.src}
+                    alt={slide.title}
+                    className='absolute inset-0 object-cover w-full h-full z-1'
+                  />
+                )}
+                <div className='w-full h-full absolute inset-0 bg-linear-to-t from-black to-transparent z-2'></div>
+                <div className='w-full h-full flex flex-col items-start justify-end gap-2 p-14 z-10'>
+                  <h1 className='font-syne text-6xl font-bold text-portfolio-amber leading-tight'>
+                    {slide.title}
+                  </h1>
+                  <h3 className='font-syne text-2xl font-bold text-white leading-snug'>
+                    {slide.subtitle}
+                  </h3>
+                </div>
               </div>
             </CarouselItem>
-          ))};
+          ))}
         </CarouselContent>
       </Carousel>
     </section>

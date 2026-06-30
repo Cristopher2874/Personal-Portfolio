@@ -8,4 +8,25 @@ export const projects: Project[] = [
     description: '...',
     techs: ['Docker', 'LangFuse', 'OCI'],
   },
+  {
+    id: 'langfuse',
+    title: 'LangFuse Observability Platform',
+    domain: 'oracle',
+    description: '...',
+    techs: ['Docker', 'LangFuse', 'OCI'],
+  },
+  {
+    id: 'langfuse',
+    title: 'LangFuse Observability Platform',
+    domain: 'oracle',
+    description: '...',
+    techs: ['Docker', 'LangFuse', 'OCI'],
+  },
+  {
+    id: 'langfuse',
+    title: 'LangFuse Observability Platform',
+    domain: 'oracle',
+    description: '...',
+    techs: ['Docker', 'LangFuse', 'OCI'],
+  },
 ]

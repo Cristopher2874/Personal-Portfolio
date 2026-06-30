@@ -14,7 +14,7 @@ export interface Project {
 
 //Slides typing
 
-type Slide = {
+export type Slide = {
   id: string,
   type: 'image'|'video',
   src: string,
